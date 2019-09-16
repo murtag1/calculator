@@ -1,0 +1,135 @@
+
+html {
+  height: 100%;
+}
+
+body {
+   font-size: 14px;
+   padding: 10px;
+   margin: 0;
+}
+
+.main-page {
+   display: flex;
+   justify-content: center;
+}
+
+.main-page__inner {
+   max-width: 900px;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.calculator {
+   display: flex;
+   flex-direction: column;
+   max-width: 400px;
+   width: 100%;
+   align-items: center;
+   margin-bottom: 30px;
+}
+
+.calculator__item {
+   margin-bottom: 20px;
+   display: flex;
+   width: 100%;
+   justify-content: space-between;
+}
+
+.calculator__item-left {
+   width: 55%;
+}
+
+.calculator__item-right {
+   width: 45%;
+   position: relative;
+   display: flex;
+}
+
+.calculator__credit-amount, .calculator__type-payments, .calculator__first-payment-date,
+.calculator__credit-term, .calculator__credit-interest-rate {
+   text-align: right;
+   padding: 0 3px;
+}
+
+.calculator__credit-amount::-webkit-inner-spin-button,
+.calculator__credit-term::-webkit-inner-spin-button,
+.calculator__credit-interest-rate::-webkit-inner-spin-button {
+   display: none;
+}
+
+.calculator__credit-amount, .calculator__type-payments, .calculator__first-payment-date {
+   width: 100%;
+}
+
+.calculator__credit-term, .calculator__credit-interest-rate {
+   width: 50%;
+   margin-right: 8px;
+}
+
+.calculator__submit-btn {
+   max-width: 100px;
+}
+
+.calculator__error {
+   margin-top: 10px;
+   color: red;
+   display: none;
+}
+
+.calculator__error_visible {
+  display: block;
+}
+
+.credit-summary {
+   width: 50%;
+   padding: 10px 10px 0 10px;
+   color: #fff;
+   background-color: #A2B04E;
+   margin-bottom: 30px;
+}
+
+.credit-summary__item {
+   margin-bottom: 10px;
+   display: flex;
+   justify-content: space-between;
+}
+
+.credit-summary__item-value {
+   color: #000;
+}
+
+.credit-details {
+   width: 100%;
+}
+
+.credit-details td {
+   padding: 5px 3px;
+   text-align: center;
+}
+
+.credit-details tr:nth-child(even) {
+   background-color: #FEDFBA;
+}
+
+.credit-details__title {
+   margin-bottom: 10px;
+   font-weight: bold;
+}
+
+.credit-details__header th {
+   background-color: #F7941D;
+   padding: 5px 3px;
+   width: 18%;
+}
+
+.credit-details__header th:first-child {
+   border-radius: 10px 0 0 0;
+   width: 7%;
+}
+
+.credit-details__header th:last-child {
+   border-radius: 0 10px 0 0;
+}

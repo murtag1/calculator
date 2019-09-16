@@ -1,0 +1,18 @@
+{
+   "extends": "airbnb/base",
+   "plugins": [
+      "html"
+   ],
+   "rules": {
+      "linebreak-style": "off",
+      "no-underscore-dangle": "off",
+      "indent": ["error", 3, { "SwitchCase": 1 }],
+      "no-restricted-syntax": "off",
+      "no-new": "off",
+      "class-methods-use-this": "off",
+   },
+   "env": {
+      "browser": true,
+      "jest": true
+    }
+}

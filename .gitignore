@@ -1,0 +1,4 @@
+node_modules
+.vscode
+dist
+slider-workspace.code-workspace
