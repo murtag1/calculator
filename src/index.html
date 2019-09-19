@@ -17,27 +17,33 @@
                <label class="calculator__item">
                   <div class="calculator__item-left">Сумма кредита:</div>
                   <div class="calculator__item-right">
-                     <input type="text" class="calculator__credit-amount" required>
+                     <div class="calculator__input-wrapper">
+                        <input type="text" class="calculator__credit-amount">
+                     </div>
                   </div>
                </label>
                <label class="calculator__item">
                   <div class="calculator__item-left">Срок кредита:</div>
                   <div class="calculator__item-right">
-                     <input type="text" value class="calculator__credit-term" required>
+                     <div class="calculator__input-wrapper calculator__input-wrapper_short">
+                        <input type="text" value class="calculator__credit-term">
+                     </div>
                      <sup>месяцев</sup>
                   </div>
                </label>
                <label class="calculator__item">
                   <div class="calculator__item-left">Процентная ставка:</div>
                   <div class="calculator__item-right">
-                     <input type="text" class="calculator__credit-interest-rate" required>
+                     <div class="calculator__input-wrapper calculator__input-wrapper_short">
+                        <input type="text" class="calculator__credit-interest-rate">
+                     </div>
                      <sup>% годовых</sup>
                   </div>
                </label>
                <label class="calculator__item">
                   <div class="calculator__item-left">Тип платежей:</div>
                   <div class="calculator__item-right">
-                     <select class="calculator__type-payments" required>
+                     <select class="calculator__type-payments">
                         <option>аннуитетный</option>
                         <option>дифференцированный</option>
                      </select>
@@ -46,11 +52,12 @@
                <label class="calculator__item">
                   <div class="calculator__item-left">Дата первого платежа:</div>
                   <div class="calculator__item-right">
-                     <input type="text" class="calculator__first-payment-date" placeholder="дд.мм.гггг" required>
+                     <div class="calculator__input-wrapper calculator__input-wrapper_short">
+                        <input type="text" class="calculator__first-payment-date" placeholder="дд.мм.гггг">
+                     </div>
                   </div>
                </label>
                <button class="calculator__submit-btn">Рассчитать</button>
-               <div class="calculator__error">Введены некорректные данные</div>
             </form>
          </div>
 
@@ -89,7 +96,16 @@
                         <th>Остаток задолжности</th>
                      </tr>
                   </thead>
-                  <tbody class="credit-details__body"></tbody>
+                  <tbody class="credit-details__body">
+                     <tr>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>---</td>
+                     </tr>
+                  </tbody>
                </table>
             </div>
          </div>

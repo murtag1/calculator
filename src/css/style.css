@@ -28,7 +28,7 @@ body {
 }
 
 .main-page__left-column {
-   width: 40%;
+   width: 42%;
 }
 
 .main-page__right-column {
@@ -64,6 +64,8 @@ body {
 .calculator__credit-term, .calculator__credit-interest-rate {
    text-align: right;
    padding: 0 3px;
+   box-sizing: border-box;
+   width: 100%;
 }
 
 .calculator__credit-amount::-webkit-inner-spin-button,
@@ -72,28 +74,42 @@ body {
    display: none;
 }
 
-.calculator__credit-amount, .calculator__type-payments {
-   width: 100%;
-}
-
-.calculator__credit-term, .calculator__credit-interest-rate, .calculator__first-payment-date {
-   width: 50%;
-   max-width: 100px;
-   margin-right: 8px;
-}
-
 .calculator__submit-btn {
    max-width: 100px;
 }
 
 .calculator__error {
-   margin-top: 10px;
+   position: absolute;
+   z-index: 100;
    color: red;
-   display: none;
+   top: calc(100% + 11px);
+   left: 0;
+   width: 150px;
+   background-color: #fff;
+   padding: 5px;
+   border: 1px solid #555;
+   border-radius: 5px;
 }
 
-.calculator__error_visible {
-  display: block;
+.calculator__error::before {
+   content: '';
+   display: block;
+   border: 10px solid transparent;
+   border-bottom: 10px solid #555;
+   position: absolute;
+   bottom: 100%;
+   left: 10px;
+}
+
+.calculator__input-wrapper {
+   position: relative;
+   display: inline-block;
+   width: 100%;
+}
+
+.calculator__input-wrapper_short {
+   max-width: 100px;
+   margin-right: 8px;
 }
 
 .credit-summary {
@@ -117,7 +133,7 @@ body {
 
 .credit-details-wrapper {
    width: 100%;
-   overflow-x: scroll;
+   overflow-x: auto;
 }
 
 .credit-details {
