@@ -1,12 +1,14 @@
 
 html {
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
    font-size: 14px;
    padding: 10px;
    margin: 0;
+   overflow-x: hidden;
 }
 
 .main-page {
@@ -15,17 +17,27 @@ body {
 }
 
 .main-page__inner {
-   max-width: 900px;
+   max-width: 1200px;
    width: 100%;
    display: flex;
-   flex-direction: column;
-   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   align-items: flex-start;
+   padding: 10px;
+   box-sizing: border-box;
+}
+
+.main-page__left-column {
+   width: 40%;
+}
+
+.main-page__right-column {
+   width: 55%;
 }
 
 .calculator {
    display: flex;
    flex-direction: column;
-   max-width: 400px;
    width: 100%;
    align-items: center;
    margin-bottom: 30px;
@@ -60,12 +72,13 @@ body {
    display: none;
 }
 
-.calculator__credit-amount, .calculator__type-payments, .calculator__first-payment-date {
+.calculator__credit-amount, .calculator__type-payments {
    width: 100%;
 }
 
-.calculator__credit-term, .calculator__credit-interest-rate {
+.calculator__credit-term, .calculator__credit-interest-rate, .calculator__first-payment-date {
    width: 50%;
+   max-width: 100px;
    margin-right: 8px;
 }
 
@@ -84,16 +97,17 @@ body {
 }
 
 .credit-summary {
-   width: 50%;
-   padding: 10px 10px 0 10px;
+   padding: 5px 10px;
    color: #fff;
    background-color: #A2B04E;
    margin-bottom: 30px;
+   box-sizing: border-box;
 }
 
 .credit-summary__item {
-   margin-bottom: 10px;
+   margin: 5px 0;
    display: flex;
+   flex-wrap: wrap;
    justify-content: space-between;
 }
 
@@ -101,8 +115,14 @@ body {
    color: #000;
 }
 
+.credit-details-wrapper {
+   width: 100%;
+   overflow-x: scroll;
+}
+
 .credit-details {
    width: 100%;
+   min-width: 450px;
 }
 
 .credit-details td {
@@ -132,4 +152,53 @@ body {
 
 .credit-details__header th:last-child {
    border-radius: 0 10px 0 0;
+}
+
+@media screen and (max-width: 900px) {
+   .main-page__inner {
+      justify-content: center;
+   }
+
+   .main-page__left-column {
+      width: 60%;
+   }
+   
+   .main-page__right-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+   }
+
+   .credit-summary {
+      width: 100%;
+      max-width: 450px;
+   }
+}
+
+@media screen and (max-width: 600px) {
+   .calculator {
+      max-width: 270px;
+   }
+
+   .main-page__left-column {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 400px;
+   }
+
+   .calculator__item {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .calculator__item-left {
+      margin-bottom: 5px;
+   }
+
+   .calculator__item-left, .calculator__item-right {
+      width: 80%;
+   }
 }

@@ -12,81 +12,88 @@
    <section class="main-page">
 
       <div class="main-page__inner">
-         <form class="calculator">
-            <label class="calculator__item">
-               <div class="calculator__item-left">Сумма кредита:</div>
-               <div class="calculator__item-right">
-                  <input type="text" class="calculator__credit-amount" required>
-               </div>
-            </label>
-            <label class="calculator__item">
-               <div class="calculator__item-left">Срок кредита:</div>
-               <div class="calculator__item-right">
-                  <input type="text" value class="calculator__credit-term" required>
-                  <sup>месяцев</sup>
-               </div>
-            </label>
-            <label class="calculator__item">
-               <div class="calculator__item-left">Процентная ставка:</div>
-               <div class="calculator__item-right">
-                  <input type="text" class="calculator__credit-interest-rate" required>
-                  <sup>% годовых</sup>
-               </div>
-            </label>
-            <label class="calculator__item">
-               <div class="calculator__item-left">Тип платежей:</div>
-               <div class="calculator__item-right">
-                  <select class="calculator__type-payments" required>
-                     <option>аннуитетный</option>
-                     <option>дифференцированный</option>
-                  </select>
-               </div>
-            </label>
-            <label class="calculator__item">
-               <div class="calculator__item-left">Дата первого платежа:</div>
-               <div class="calculator__item-right">
-                  <input type="text" class="calculator__first-payment-date" placeholder="дд.мм.гггг" required>
-               </div>
-            </label>
-            <button class="calculator__submit-btn">Рассчитать</button>
-            <div class="calculator__error">Введены некорректные данные</div>
-         </form>
+         <div class="main-page__left-column">
+            <form class="calculator">
+               <label class="calculator__item">
+                  <div class="calculator__item-left">Сумма кредита:</div>
+                  <div class="calculator__item-right">
+                     <input type="text" class="calculator__credit-amount" required>
+                  </div>
+               </label>
+               <label class="calculator__item">
+                  <div class="calculator__item-left">Срок кредита:</div>
+                  <div class="calculator__item-right">
+                     <input type="text" value class="calculator__credit-term" required>
+                     <sup>месяцев</sup>
+                  </div>
+               </label>
+               <label class="calculator__item">
+                  <div class="calculator__item-left">Процентная ставка:</div>
+                  <div class="calculator__item-right">
+                     <input type="text" class="calculator__credit-interest-rate" required>
+                     <sup>% годовых</sup>
+                  </div>
+               </label>
+               <label class="calculator__item">
+                  <div class="calculator__item-left">Тип платежей:</div>
+                  <div class="calculator__item-right">
+                     <select class="calculator__type-payments" required>
+                        <option>аннуитетный</option>
+                        <option>дифференцированный</option>
+                     </select>
+                  </div>
+               </label>
+               <label class="calculator__item">
+                  <div class="calculator__item-left">Дата первого платежа:</div>
+                  <div class="calculator__item-right">
+                     <input type="text" class="calculator__first-payment-date" placeholder="дд.мм.гггг" required>
+                  </div>
+               </label>
+               <button class="calculator__submit-btn">Рассчитать</button>
+               <div class="calculator__error">Введены некорректные данные</div>
+            </form>
+         </div>
 
-         <div class="credit-summary">
-            <div class="credit-summary__item">
-               <div class="credit-summary__item-title">Сумма ежемесячного платежа:</div>
-               <div class="credit-summary__item-value">
-                  <strong class="credit-summary__monthly-payment">0 </strong> руб
+         <div class="main-page__right-column">
+            <div class="credit-summary">
+               <div class="credit-summary__item">
+                  <div class="credit-summary__item-title">Сумма ежемесячного платежа:</div>
+                  <div class="credit-summary__item-value">
+                     <strong class="credit-summary__monthly-payment">0 </strong> руб
+                  </div>
+               </div>
+               <div class="credit-summary__item">
+                  <div class="credit-summary__item-title">Переплата по процентам за кредит:</div>
+                  <div class="credit-summary__item-value">
+                     <strong class="credit-summary__overpayment">0 </strong> руб
+                  </div>
+               </div>
+               <div class="credit-summary__item">
+                  <div class="credit-summary__item-title">Возможный налоговый вычет:</div>
+                  <div class="credit-summary__item-value">
+                     <strong class="credit-summary__tax-deduction">0 </strong> руб
+                  </div>
                </div>
             </div>
-            <div class="credit-summary__item">
-               <div class="credit-summary__item-title">Переплата по процентам за кредит:</div>
-               <div class="credit-summary__item-value">
-                  <strong class="credit-summary__overpayment">0 </strong> руб
-               </div>
-            </div>
-            <div class="credit-summary__item">
-               <div class="credit-summary__item-title">Возможный налоговый вычет:</div>
-               <div class="credit-summary__item-value">
-                  <strong class="credit-summary__tax-deduction">0 </strong> руб
-               </div>
+
+            <div class="credit-details-wrapper">
+               <table class="credit-details">
+                  <caption class="credit-details__title">График платежей</caption>
+                  <thead class="credit-details__header">
+                     <tr>
+                        <th>№ платежа</th>
+                        <th>Дата платежа</th>
+                        <th>Сумма платежа</th>
+                        <th>Основной долг</th>
+                        <th>Начисленные проценты</th>
+                        <th>Остаток задолжности</th>
+                     </tr>
+                  </thead>
+                  <tbody class="credit-details__body"></tbody>
+               </table>
             </div>
          </div>
 
-         <table class="credit-details">
-            <caption class="credit-details__title">График платежей</caption>
-            <thead class="credit-details__header">
-               <tr>
-                  <th>№ платежа</th>
-                  <th>Дата платежа</th>
-                  <th>Сумма платежа</th>
-                  <th>Основной долг</th>
-                  <th>Начисленные проценты</th>
-                  <th>Остаток задолжности</th>
-               </tr>
-            </thead>
-            <tbody class="credit-details__body"></tbody>
-         </table>
       </div>
    </section>
 
