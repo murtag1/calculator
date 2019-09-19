@@ -51,8 +51,12 @@ class FormView {
    }
 
    _validateDateInput(inputValue) {
+      // eslint-disable-next-line no-param-reassign
+      inputValue = inputValue.replace(/\s/g, '');
+
       if (inputValue === '') return false;
-      const dateValue = inputValue.match(/[0-1][1-2]\.[0-1][1-2]\.[0-9]{4}|0[1-9]\.0[1-9]\.[0-9]{4}/ig);
+      const dateValue = inputValue.match(/^(1[0-2]|0[1-9])\.(1[0-2]|0[1-9])\.[0-9]{4}$/ig);
+
       if (!dateValue) {
          return false;
       }
